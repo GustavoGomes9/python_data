@@ -6,43 +6,41 @@ db = client.dataTest
 user = db.user
 read = user.find()
 
-# Update funcional
+def layout(name):
+     print('============================================='),
+     print(f'                 {name}                 '),
+     print('=============================================')
+    
 
+
+"""
+# Update funcional
 myQuery = {"name": "Someone-else"}
 newValue = {"$set": {"name": "Nadiya Ismail"}}
 user.update_one(myQuery, newValue)
 
-"""
 # Delete funcional
 try:
     user.delete_one({"name": "Random Guy"})
 except:
     print("Erro")
-
-
-# Read funcional
-
-for doc in read:
-    print(doc)"""
+"""
 # loop de interação
 while True:
     # Tela inicial de opções do usuario (CRUD)
-    print('=============================================')
-    print('                 PYTHON_DATA                 ')
-    print('=============================================')
+    print(layout('PYHTON_DATA'))
     print('Escolha uma opção abaixo: ')
     print(' [1]-Cadastrar\n [2]-Listar\n [3]-Sair do sistema' )
     print('=============================================')
     option = input('Digite aqui: ')
 
     # Rotas para opções
+    # Tela cadastro
     if option == '1':
         os.system('clear')
         sure = False
         while not sure:
-            print('=============================================')
-            print('                 CADASTRO                 ')
-            print('=============================================')
+            print(layout('CADASTRO'))
             name = input('Digite seu nome: ')
             age = int(input("Digite sua idade: "))
             email = input('Digite seu email: ')
@@ -69,23 +67,27 @@ while True:
                 print("Valor inserido não correspondente.")
                 sure = True
 
-
-
     elif option == '2':
         os.system('clear')
-        print('Opção 2')
+        # Tela mostrar
+        print(layout('LISTANDO'))
+        # Read funcional
+        for doc in read:
+            print('Nome:',doc['name'], 'Idade:',doc['age'], ' Email:', doc['email'] )
+        print('=============================================')
+        answer = input("[1]-Editar [2]-Apagar [3]-Sair ").lower()
+        if answer == '3':
+            os.system('clear')
+
+        # Pesquisar
+        # opção atualizar
+        # opção deletar
     elif option == '3':
         os.system('clear')
         print('Até mais!!')
         break
     else:
         print("Entrada não correspondente, Tente novamente.")
-
-
-# Tela cadastro
-# Tela mostrar
-    # Pesquisar
-    # opção atualizar
-    # opção deletar 
+ 
 # Banco na nuvem (CLUSTER)
 # UPAR para repl.it
