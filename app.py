@@ -78,7 +78,7 @@ while True:
                     os.system('clear')
                     print(layout('PESQUISAR RESULTADO:'))
                     print('Resultado: ')
-                    print(query)
+                    print("Nome:", query['name'], "Idade:", query['age'], "Email:", query['email'])
                     print('=============================================')
                 except:
                     print('Erro no banco de dados')
@@ -119,7 +119,7 @@ while True:
                     os.system('clear')
                     print(layout('PESQUISAR RESULTADO:'))
                     print('Resultado: ')
-                    print(query)
+                    print("Nome:", query['name'], "Idade:", query['age'], "Email:", query['email'])
                     print('=============================================')
                 except:
                     print('Erro no banco de dados')
